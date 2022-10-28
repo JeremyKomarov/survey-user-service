@@ -1,21 +1,22 @@
-package com.customerService.repository.mapper;
+package com.userService.repository.mapper;
 
-import com.customerService.model.Customer;
+import com.userService.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerMapper implements RowMapper<Customer> {
+public class UserMapper implements RowMapper<User> {
 
     @Override
-    public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return new Customer(
+    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+        return new User(
                 rs.getLong("id"),
                 rs.getString("first_name"),
                 rs.getString("last_name"),
                 rs.getString("email"),
-                rs.getString("status")
+                rs.getInt("age"),
+                rs.getString("address")
         );
     }
 }

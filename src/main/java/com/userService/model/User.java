@@ -1,18 +1,20 @@
-package com.customerService.model;
+package com.userService.model;
 
-public class Customer {
+public class User {
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
-    private String status;
+    private int age;
+    private String address;
 
-    public Customer(Long id, String firstName, String lastName, String email, String status) {
+    public User(Long id, String firstName, String lastName, String email, int age, String address) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.status = status;
+        this.age = age;
+        this.address = address;
     }
 
     public Long getId() {
@@ -31,8 +33,12 @@ public class Customer {
         return email;
     }
 
-    public String getStatus() {
-        return status;
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public void setId(Long id) {
@@ -51,7 +57,12 @@ public class Customer {
         this.email = email;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
+
