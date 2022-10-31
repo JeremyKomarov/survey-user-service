@@ -7,6 +7,7 @@ CREATE TABLE user (
     email varchar(300) NOT NULL,
     age int(11) unsigned NOT NULL,
     address varchar(300) NOT NULL,
+    register_date DATE NOT NULL,
 
     PRIMARY KEY (id)
 );

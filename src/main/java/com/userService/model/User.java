@@ -1,5 +1,7 @@
 package com.userService.model;
 
+import java.time.LocalDate;
+
 public class User {
     private Long id;
     private String firstName;
@@ -7,14 +9,17 @@ public class User {
     private String email;
     private int age;
     private String address;
+    private LocalDate registerDate;
 
-    public User(Long id, String firstName, String lastName, String email, int age, String address) {
+
+    public User(Long id, String firstName, String lastName, String email, int age, String address, LocalDate registerDate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.age = age;
         this.address = address;
+        this.registerDate = LocalDate.now();
     }
 
     public Long getId() {
@@ -41,6 +46,10 @@ public class User {
         return address;
     }
 
+    public LocalDate getRegisterDate() {
+        return registerDate;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -64,5 +73,6 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
+
 }
 
