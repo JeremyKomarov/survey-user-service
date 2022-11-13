@@ -1,6 +1,7 @@
 package com.userService.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.userService.model.User;
+import com.userService.poll.PollService;
 import com.userService.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    PollService pollService;
 
     @Autowired
     ObjectMapper objectMapper;
@@ -32,5 +35,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserById(Long id) {
         userRepository.deleteUserById(id);
+        pollService.deleteAllVotesByUserId(id);
     }
 }

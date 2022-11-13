@@ -12,3 +12,7 @@ spring:
   h2:
     console:
       enabled: true
+
+internalAPI:
+  pollAPI:
+    url: http://localhost:8081
